@@ -1,16 +1,21 @@
 ﻿using UnityEngine;
 
-public class SetInactiveAfterTime : MonoBehaviour
+namespace MonsterFlow.Objects
 {
-    public float maxTime;
-
-    float time;
-
-    void Update()
+    public class SetInactiveAfterTime : MonoBehaviour
     {
-        // Destroy the object when at maxTime seconds.
-        this.time += Time.deltaTime;
+        public float maxTime;
+        private float _time;
 
-        if (this.time > this.maxTime) this.gameObject.SetActive(false);
+        private void Update()
+        {
+            SetObjectInactiveAfterTime();
+        }
+
+        private void SetObjectInactiveAfterTime()
+        {
+            _time += Time.deltaTime;
+            if (_time > maxTime) gameObject.SetActive(false);
+        }
     }
 }

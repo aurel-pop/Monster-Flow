@@ -4,19 +4,19 @@ public class Sounds : MonoBehaviour
 {
     public AudioClip[] soundClips;
 
-    private AudioSource source;
+    private AudioSource audioSource;
     public float lowPitchRange;
     public float highPitchRange;
 
 
     private void Start()
     {
-        this.source = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void PlaySound(int i)
     {
-        this.source.pitch = Random.Range(lowPitchRange, highPitchRange);
-        this.source.PlayOneShot(soundClips[i]);
+        audioSource.pitch = Random.Range(lowPitchRange, highPitchRange);
+        audioSource.PlayOneShot(soundClips[i]);
     }
 }

@@ -1,29 +1,27 @@
-﻿using UnityEngine;
+﻿using MonsterFlow.System;
+using UnityEngine;
 
-namespace MonsterFlow
+namespace MonsterFlow.Objects.Enemy
 {
-	/// <summary>
-	///    Move an object towards the origin.
-	/// </summary>
-	public class MoveToOrigin : MonoBehaviour
-	{
-		/// <summary> Base movement speed of the object. </summary>
-		public float speed;
+    public class MoveToOrigin : MonoBehaviour
+    {
+        public float speed;
+        private Vector3 _moveDirection;
 
-		// Movement vector towards the center position.
-		private Vector3 moveDirection;
+        private void Start()
+        {
+            _moveDirection = (Vector3.zero - transform.position).normalized;
+        }
 
-		private void Start()
-		{
-			// Calculate direction to center
-			this.moveDirection = (Vector3.zero - this.transform.position).normalized;
-		}
+        private void Update()
+        {
+            MoveObjectToOrigin();
+        }
 
-		private void Update()
-		{
-			// Move enemy towards center position
-			this.transform.Translate(this.moveDirection *
-											 (this.speed * GameController.instance.CurrentSpeedMultiplier * Time.deltaTime));
-		}
-	}
+        private void MoveObjectToOrigin()
+        {
+            transform.Translate(_moveDirection *
+                                (speed * GameController.Instance.CurrentSpeedMultiplier * Time.deltaTime));
+        }
+    }
 }

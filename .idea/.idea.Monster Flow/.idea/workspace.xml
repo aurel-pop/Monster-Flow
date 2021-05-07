@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="91fecce0-8817-41d0-9800-49d4d7acb12d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Scripts/System/Sounds.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Objects/Enemy/MoveToOrigin.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Objects/Enemy/RandomRotator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Objects/Player/PlayerAnimationManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Objects/Player/PlayerBlinkingAnimation.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Objects/SetInactiveAfterTime.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Objects/Player/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Objects/DestroyAfterSeconds.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/System/BackgroundMusicSwitcher.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/System/CollisionManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/System/Controls.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/System/ControlsManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/System/DontDestroy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/System/FadeAndDestroyObject.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/System/FadeAndDestroy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/System/ObjectSpawnIndicator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/System/SpawnIndicator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/System/SwitchScenes.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/System/YellowMonsterAnimations.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/System/GameController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Objects/YellowMonsterAnimations.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Objects/YellowMonster.cs" />
+    </changedPaths>
+  </component>
+  <component name="ProjectId" id="1sD3x3VEraMZrwi9r3tnAgRIoHc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="showLigatures" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="91fecce0-8817-41d0-9800-49d4d7acb12d" name="Default Changelist" comment="" />
+      <created>1620393577475</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620393577475</updated>
+      <workItem from="1620393582632" duration="592000" />
+      <workItem from="1620394196087" duration="196000" />
+      <workItem from="1620394404958" duration="6026000" />
+      <workItem from="1620401161684" duration="392000" />
+      <workItem from="1620402738449" duration="524000" />
+      <workItem from="1620403908969" duration="71000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

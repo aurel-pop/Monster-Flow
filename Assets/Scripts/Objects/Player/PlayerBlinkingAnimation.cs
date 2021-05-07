@@ -1,62 +1,46 @@
 ﻿using UnityEngine;
 
-// Make the player character blink for a random amount of time, after a random amount of time
-namespace MonsterFlow
+namespace MonsterFlow.Objects.Player
 {
-	public class PlayerBlinkingAnimation : MonoBehaviour
-	{
-		private Animator anim;
-		private float    blinkingTimer;
-		private float    randomBlinkingRange;
-		private float    randomRange;
-		private float    timer;
+    public class PlayerBlinkingAnimation : MonoBehaviour
+    {
+        private Animator _anim;
+        private float _blinkingTimer;
+        private float _randomBlinkingRange;
+        private float _randomRange;
+        private float _timer;
 
-		private void Start()
-		{
-			this.anim = GetComponent<Animator>();
+        private void Start()
+        {
+            _anim = GetComponent<Animator>();
+            _randomRange = Random.Range(2.5f, 4f);
+            _randomBlinkingRange = Random.Range(0.19f, 0.25f);
+        }
 
-			this.randomRange = Random.Range(2.5f, 4f);
+        private void Update()
+        {
+            BlinkEyes();
+        }
 
-			//print(randomRange);
-			this.randomBlinkingRange = Random.Range(0.19f, 0.25f);
+        private void BlinkEyes()
+        {
+            _timer += Time.deltaTime;
 
-			//print(randomBlinkingRange);
-		}
+            if (_timer > _randomRange)
+            {
+                _anim.SetBool("IsClosingEyes", true);
+                _timer = 0;
+                _randomRange = Random.Range(2.5f, 4f);
+            }
 
-		private void Update()
-		{
-			// Using timer for the amount of seconds that has passed
-			this.timer += Time.deltaTime;
+            if (!_anim.GetCurrentAnimatorStateInfo(0).IsName("Player_Blinking")) return;
+            _blinkingTimer += Time.deltaTime;
 
-			//Debug.Log(timer);
-
-			if (this.timer > this.randomRange)
-			{
-				this.anim.SetBool("IsClosingEyes", true);
-				this.timer = 0;
-
-				this.randomRange = Random.Range(2.5f, 4f);
-
-				//print(randomRange);
-			}
-
-			if (this.anim.GetCurrentAnimatorStateInfo(0).IsName("Player_Blinking"))
-			{
-				this.blinkingTimer += Time.deltaTime;
-
-				if (this.blinkingTimer > this.randomBlinkingRange)
-				{
-					this.anim.SetBool("IsClosingEyes", false);
-					this.blinkingTimer = 0;
-					this.timer         = 0;
-
-					this.randomBlinkingRange = Random.Range(0.19f, 0.25f);
-
-					//print(randomBlinkingRange);
-				}
-			}
-
-			//timer = 0;
-		}
-	}
+            if (!(_blinkingTimer > _randomBlinkingRange)) return;
+            _anim.SetBool("IsClosingEyes", false);
+            _blinkingTimer = 0;
+            _timer = 0;
+            _randomBlinkingRange = Random.Range(0.19f, 0.25f);
+        }
+    }
 }

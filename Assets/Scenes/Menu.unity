@@ -305,11 +305,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d098c30420aa4f4f8d21a780dcd7705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BackgroundMusicGame: {fileID: 8300000, guid: fdac44e12e0e55942a5794ecbc5b7712, type: 3}
+  backgroundMusicGame: {fileID: 8300000, guid: fdac44e12e0e55942a5794ecbc5b7712, type: 3}
   volumeDownStep: 1
   volumeUpStep: 0.2
   volumeCrossover: 0.1
-  gameMusicVolume: 1
+  gameMusicVolume: 0.25
 --- !u!114 &413444941
 MonoBehaviour:
   m_ObjectHideFlags: 0

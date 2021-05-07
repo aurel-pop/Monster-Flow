@@ -1,24 +1,25 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SwitchScenes : MonoBehaviour
+namespace MonsterFlow.System
 {
-    private BackgroundMusicSwitcher backgroundMusicSwitcher;
-
-    private void Start()
+    public class SwitchScenes : MonoBehaviour
     {
-        backgroundMusicSwitcher = FindObjectOfType<BackgroundMusicSwitcher>();
+        private BackgroundMusicSwitcher _backgroundMusicSwitcher;
 
-        if (backgroundMusicSwitcher == null)
-            print("Could not find BackgroundMusicSwitcher script");
-    }
-
-    void Update()
-    {
-        if (Input.touchCount > 0 || Input.anyKey)
+        private void Start()
         {
-            if (backgroundMusicSwitcher != null)
-                backgroundMusicSwitcher.SwitchBackgroundMusic();
+            _backgroundMusicSwitcher = FindObjectOfType<BackgroundMusicSwitcher>();
+
+            if (_backgroundMusicSwitcher == null)
+                print("Could not find BackgroundMusicSwitcher script");
+        }
+
+        private void Update()
+        {
+            if (Input.touchCount <= 0 && !Input.anyKey) return;
+            if (_backgroundMusicSwitcher != null)
+                _backgroundMusicSwitcher.SwitchBackgroundMusic();
 
             SceneManager.LoadScene("Game");
         }

@@ -1,28 +1,27 @@
 ﻿using UnityEngine;
 
-public class DestroyAfterSeconds : MonoBehaviour
+namespace MonsterFlow.Objects
 {
-    public bool dontDestroyOnLoad;
-
-    public float destroyAfterSeconds;
-    float time;
-
-    void Awake()
+    public class DestroyAfterSeconds : MonoBehaviour
     {
-        if (dontDestroyOnLoad)
+        public bool dontDestroyOnLoad;
+        public float destroyAfterSeconds;
+        private float _time;
+
+        private void Awake()
         {
-            DontDestroyOnLoad(this.gameObject);
+            if (dontDestroyOnLoad) DontDestroyOnLoad(gameObject);
         }
-    }
 
-    void Update()
-    {
-        // Destroy the object when at x seconds.
-        this.time += Time.deltaTime;
-
-        if (destroyAfterSeconds > 0 && this.time > this.destroyAfterSeconds)
+        private void Update()
         {
-            Destroy(this.gameObject);
+            DestroyObjectAtSeconds();
+        }
+
+        private void DestroyObjectAtSeconds()
+        {
+            _time += Time.deltaTime;
+            if (destroyAfterSeconds > 0 && _time > destroyAfterSeconds) Destroy(gameObject);
         }
     }
 }

@@ -1,57 +1,57 @@
 ﻿using UnityEngine;
 
-public class BackgroundMusicSwitcher : MonoBehaviour
+namespace MonsterFlow.System
 {
-    public AudioClip BackgroundMusicGame;
-    private AudioSource source;
-    public float volumeDownStep;
-    public float volumeUpStep;
-    public float volumeCrossover;
-    public float gameMusicVolume;
-    private bool turnVolumeDown;
-    private bool turnVolumeUp = true;
-
-    void Start()
+    public class BackgroundMusicSwitcher : MonoBehaviour
     {
-        source = GetComponent<AudioSource>();
+        public AudioClip backgroundMusicGame;
+        public float volumeDownStep;
+        public float volumeUpStep;
+        public float volumeCrossover;
+        public float gameMusicVolume;
+        private AudioSource _audioSource;
+        private bool _turnVolumeDown;
+        private bool _turnVolumeUp = true;
 
-        source.volume = 0.5f;
-
-        if (BackgroundMusicGame == null)
-            print("Could not find BackgroundMusicGame");
-    }
-
-    void Update()
-    {
-        if (turnVolumeUp)
+        private void Start()
         {
-            source.volume += volumeUpStep * Time.deltaTime;
+            _audioSource = GetComponent<AudioSource>();
 
-            if (source.volume >= gameMusicVolume)
-            {
-                turnVolumeUp = false;
-            }
+            _audioSource.volume = gameMusicVolume;
+
+            if (backgroundMusicGame == null)
+                print("Could not find BackgroundMusicGame AudioClip");
         }
 
-        if (turnVolumeDown)
+        private void Update()
         {
-            source.volume -= volumeDownStep * Time.deltaTime;
-
-            if (source.volume < volumeCrossover)
-            {
-                turnVolumeDown = false;
-
-                // Switch BackgroundMusic
-                source.clip = BackgroundMusicGame;
-                source.Play();
-
-                turnVolumeUp = true;
-            }
+            SetVolume();
         }
-    }
 
-    public void SwitchBackgroundMusic()
-    {
-        turnVolumeDown = true;
+        private void SetVolume()
+        {
+            if (_turnVolumeUp)
+            {
+                _audioSource.volume += volumeUpStep * Time.deltaTime;
+
+                if (_audioSource.volume >= gameMusicVolume) _turnVolumeUp = false;
+            }
+
+            if (!_turnVolumeDown) return;
+            _audioSource.volume -= volumeDownStep * Time.deltaTime;
+
+            if (!(_audioSource.volume < volumeCrossover)) return;
+            _turnVolumeDown = false;
+
+            _audioSource.clip = backgroundMusicGame;
+            _audioSource.Play();
+
+            _turnVolumeUp = true;
+        }
+
+        public void SwitchBackgroundMusic()
+        {
+            _turnVolumeDown = true;
+        }
     }
 }

@@ -1,33 +1,36 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class PlayerAnimationManager : MonoBehaviour
+namespace MonsterFlow.Objects.Player
 {
-    public float playerDeathTime;
-    private Animator anim;
-
-    private void Awake()
+    public class PlayerAnimationManager : MonoBehaviour
     {
-        this.anim = gameObject.GetComponent<Animator>();
-        if (this.anim == null) Debug.Log("Cannot find 'Animator' component");
-    }
+        public float playerDeathTime;
+        private Animator _anim;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        // Player collides with Toimato, Game Over
-        if (other.gameObject.CompareTag("Tomato"))
+        private void Awake()
         {
-            //Instantiate(playerExplosion, other.transform.position, new Quaternion(0, 0, 0, 0));
-
-            StartCoroutine(AnimationCoroutine("Player_Sleep-Fainting", this.playerDeathTime));
+            _anim = gameObject.GetComponent<Animator>();
+            if (_anim == null) Debug.Log("Cannot find 'Animator' component");
         }
-    }
 
-    private IEnumerator AnimationCoroutine(string animationName, float seconds)
-    {
-        this.anim.Play(animationName);
-        yield return new WaitForSeconds(seconds);
-        this.anim.Play("Idle");
-        yield return null;
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("Tomato"))
+                FaintSleep();
+        }
+
+        private void FaintSleep()
+        {
+            StartCoroutine(AnimateForSeconds("Player_Sleep-Fainting", playerDeathTime));
+        }
+
+        private IEnumerator AnimateForSeconds(string animationName, float seconds)
+        {
+            _anim.Play(animationName);
+            yield return new WaitForSeconds(seconds);
+            _anim.Play("Idle");
+            yield return null;
+        }
     }
 }

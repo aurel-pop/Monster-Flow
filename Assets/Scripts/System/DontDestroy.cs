@@ -1,19 +1,22 @@
 ﻿using UnityEngine;
 
-public class DontDestroy : MonoBehaviour
+namespace MonsterFlow.System
 {
-    static bool created = false;
-
-    void Awake()
+    public class DontDestroy : MonoBehaviour
     {
-        if (!created)
+        private static bool _created;
+
+        private void Awake()
         {
-            DontDestroyOnLoad(this.gameObject);
-            created = true;
-        }
-        else
-        {
-            Destroy(this.gameObject);
+            if (!_created)
+            {
+                DontDestroyOnLoad(gameObject);
+                _created = true;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

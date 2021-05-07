@@ -1,12 +1,19 @@
 ﻿using UnityEngine;
 
-// Move sprites clockwise
-namespace MonsterFlow
+namespace MonsterFlow.Objects.Enemy
 {
-	public class RandomRotator : MonoBehaviour
-	{
-		public float rotationSpeed;
+    public class RandomRotator : MonoBehaviour
+    {
+        public float rotationSpeed;
 
-		private void FixedUpdate() { this.transform.Rotate(Vector3.forward * this.rotationSpeed); }
-	}
+        private void FixedUpdate()
+        {
+            RotateObject();
+        }
+
+        private void RotateObject()
+        {
+            transform.Rotate(Vector3.forward * rotationSpeed);
+        }
+    }
 }
